@@ -1,0 +1,57 @@
+
+
+
+<!-- <h1 class="a">Student Details </h1>
+<marquee behavior="" direction="left" style="color:whitesmoke; background-color: dodgerblue;"><strong>This table has been created by using angular(frontend) SpringBoot (Backend ) PostgresSQL(for database)</strong></marquee>
+<div style="text-align: center;" >
+
+<h4>Student  List</h4>
+</div> -->
+
+<br>
+<table class="table table-bordered" style="width: 100% ;" >
+    <thead class="thead-dark">
+        <tr>
+            <th style="text-align: center;">   Date </th>
+            <th style="text-align: center;">  Task Name </th>
+            <th style="text-align: center;">  Brief description of the Task </th>
+            <!-- <th>  EmpId </th> -->
+            
+            <th>  Status    </th>
+         <th style="text-align: center;">Remarks  </th>
+            <!-- <th style="text-align: center;">  Location </th> -->
+            <!-- <th>  Locati </th> -->
+           
+              <th style="text-align: center;">  Actions </th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees" >
+            <td> {{ employee.name1 }}</td>
+            <td style="text-align: center; counter-set: inherit;"> {{ employee.empid }}</td>
+            <textarea style="width: 100%; height: 110px;"> {{ employee.emailId }}</textarea>
+            <!-- <td> {{ employee.empid }}</td> -->
+          <td >   <button class="btn btn-success">{{ employee.role }}</button>  </td>
+              <textarea style="width: 100%; height: 110px;"> {{ employee.designation }}</textarea>
+            <!-- <td> {{ employee.location }}</td> -->
+            <!--  -->
+            <!-- <td> {{ employee.contactnu }}</td>  -->
+        
+            <td>
+                <button (click) = "updateEmployee(employee.id)" class="btn btn-info" style="border-radius:10px ; " >Update</button>
+                <button (click) = "employeeDetails(employee.id)" class="btn btn-success" style="margin-left: 6px; border-radius: 10px;">View</button>
+ 
+                <!-- <button (click) = "deleteEmployee(employee.id)" class="btn btn-danger" style="margin-left: 6px; border-radius: 10px;">Delete</button>  -->
+               
+            </td>
+            <!-- <td>
+                <button (click) = "updateEmployee(employee.id)" class="btn btn-info">Update</button>
+            </td>
+            <td>
+                <button (click) = "updateEmployee(employee.id)" class="btn btn-info">Update</button>
+            </td> -->
+            
+
+        </tr>
+    </tbody>
+</table>
